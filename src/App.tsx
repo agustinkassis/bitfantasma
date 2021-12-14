@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import './App.css';
-// import TweetEmbed from 'react-tweet-embed';
 // import getBlueQuote from './libs/bluelytics';
 // import getBinanceQuote from './libs/binance';
 import TopBar from './components/TopBar';
 import { Logo } from './components/Logo';
 import { Body } from './components/Body';
 import { Footer } from './components/Footer';
+import { TweetsList } from './components/TweetsList';
 
 function App() {
   // const buyPrice = 1000;
@@ -23,7 +23,9 @@ function App() {
     <div className='App'>
       <TopBar />
       <Logo />
-      <Body>En construcción...</Body>
+      <Body>
+        <TweetsList />
+      </Body>
       <Footer />
     </div>
   );

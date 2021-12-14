@@ -144,7 +144,7 @@ p {
   }
 }
 
-.tweet_block {
-  display: flex;
+.twitter_wrapper {
   justify-content: center;
+  display: flex;
 }
