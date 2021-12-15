@@ -6,6 +6,7 @@ const FooterComponent = styled('div')({
   backgroundColor: 'white',
   padding: 15,
   lineHeight: 2,
+  marginTop: 2,
 });
 
 const GithubLink = styled(Link)({

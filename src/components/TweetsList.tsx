@@ -1,16 +1,11 @@
 import { Stack, styled } from '@mui/material';
 import MaterialContainer from '@mui/material/Container';
 import { useState, useEffect } from 'react';
-import TweetEmbed from 'react-tweet-embed';
 import { db } from '../libs/firebase';
+import { TweetWrapper } from './TweetWrapper';
 
 const Container = styled(MaterialContainer)({
   minHeight: '90vh',
-});
-
-const Tweet = styled('div')({
-  margin: 'auto',
-  minWidth: '90vw',
 });
 
 const List = styled(Stack)({
@@ -19,11 +14,13 @@ const List = styled(Stack)({
 });
 
 const generateList = (tweets: any[]) => {
-  return tweets.map((tweet: any) => (
-    <Tweet>
-      <TweetEmbed className='twitter_wrapper' id={tweet.id} />
-    </Tweet>
-  ));
+  return tweets.map((tweet: any) => {
+    return tweet.transaction ? (
+      <TweetWrapper key={tweet.id} tweet={tweet} />
+    ) : (
+      ''
+    );
+  });
 };
 
 export const TweetsList = (props: any) => {
