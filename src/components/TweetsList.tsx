@@ -28,10 +28,12 @@ export const TweetsList = (props: any) => {
   const [tweets, setTweets] = useState<any[]>([]);
 
   useEffect(() => {
-    db.collection('tweets').onSnapshot((snapshot) => {
-      const res = snapshot.docs.map((doc: any) => doc.data());
-      setTweets(res);
-    });
+    db.collection('tweets')
+      .orderBy('timestamp', 'desc')
+      .onSnapshot((snapshot) => {
+        const res = snapshot.docs.map((doc: any) => doc.data());
+        setTweets(res);
+      });
   }, []);
   return (
     <Container>
