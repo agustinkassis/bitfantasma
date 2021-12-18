@@ -11,6 +11,7 @@ const Container = styled(MaterialContainer)({
 const List = styled(Stack)({
   display: 'flex',
   justifyContent: 'center',
+  alignItems: 'stretch',
 });
 
 const generateList = (tweets: any[]) => {
